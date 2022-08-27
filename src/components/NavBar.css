@@ -1,0 +1,78 @@
+.navBarCont {
+    background: linear-gradient(322deg, rgba(67,206,162,1) 0%, rgba(24,90,157,1) 100%);
+    list-style-type: none;
+    color: white; 
+    font-size: 1.3rem;
+}
+
+.barFlex {
+    display: flex;
+}
+
+.brandBox {
+    display: flex;
+    align-items: center;
+}
+
+.brandFront {
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    font-size: 1.5rem;
+    
+}
+
+.nav {
+    display: flex;
+    justify-content: end;
+    padding-left: 50%;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+}
+
+li {
+    margin: 1.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    border-radius: 30%;
+    background-color: transparent;
+    transition: 0.7s;
+}
+
+a:hover {
+    background-color: white;
+    color: #4d7c8a;
+    border-radius: 30%;
+    box-shadow: 1px 1px rgba(68, 64, 64, 0.751); 
+    padding: 0.5rem;
+}
+
+.cartFlex {
+    display: flex;
+    padding-right: 5rem;
+}
+
+@media screen and (max-width: 1340px) {
+
+    .nav {
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        padding: 0;
+        margin: 0;
+    }
+
+    .cartFlex {
+        padding: 0;
+    }
+}
