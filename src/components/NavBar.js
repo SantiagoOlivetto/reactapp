@@ -3,10 +3,10 @@ import './NavBar.css'
 
 const NavBar = () => {
   return (
-    <nav className="navBarCont">
+    <nav className="navBarCont bg-primary">
       <div className='barFlex'>
         <div className='brandBox'>
-          <strong className='brandFront'>Kailand</strong>
+          <strong className='brandFront'>Mos Eisley cantina</strong>
         </div>
         <div className='nav'>
           <ul>
