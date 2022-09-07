@@ -7,6 +7,7 @@
 
 .barFlex {
     display: flex;
+    justify-content: space-between;
 }
 
 .brandBox {
@@ -15,17 +16,13 @@
 }
 
 .brandFront {
-    display: flex;
-    align-items: center;
     padding-left: 2rem;
-    font-size: 1.5rem;
-    
+    font-size: 1.5rem;  
 }
 
 .nav {
     display: flex;
-    justify-content: flex-end;
-    padding-left: 50%;
+    flex-direction: row;
 }
 
 ul {
@@ -50,7 +47,7 @@ a {
 a:hover {
     background-color: white;
     color: #4d7c8a;
-    border-radius: 30%;
+    border-radius: 100%;
     box-shadow: 1px 1px rgba(68, 64, 64, 0.751); 
     padding: 0.5rem;
 }

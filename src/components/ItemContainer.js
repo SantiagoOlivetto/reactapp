@@ -1,34 +1,35 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
+import comicsjson from "../comics.json"
 
-const API = "https://swapi.dev/api/films/";
 
 const ItemContainer = () => {
-  const [films, setFilms] = useState();
+  const [comics, setComics] = useState([]);
 
-  /* const getFilms = (data, time) => {
-        if (data) {
-            setTimeout(() => {
-                fetch(data)
-                .then((res) => res.json())
-                .then((resJson) => setFilms(resJson.results))
-                .catch((err) => console.log(`${err}: There was a problem`))
-            }, time)
-            console.log(data,time)
-        }   
-    } */
+    const getComics = (data, time) => {
+        new Promise((resolve, reject) => {
+            if (data) {
+                resolve(data)
+            }
+            else {
+                reject("Error")
+            }
+        })
+    }
 
-    useEffect(() => {
-        setTimeout(() => {
-            
-            fetch(API)
-            .then ((res) => res.json())
-            .then ((resJson => setFilms(resJson.results)))
-            .catch((err) => console.log(`${err}: There was a problem`)) 
 
-        }, 2000)
-    }, [])
+  useEffect( () => {
+    getComics(comicsjson)
+    .then((res) => setComics(res))
+    .catch((rej) => console.log(`${rej} Error`))
+    /* fetch(comicsjson)
+    .then((res) => setComics(res))
+    .catch((rej) => console.log (`${rej} Error`)) */
 
-    return <ItemList films={films} />
+  }, [])
+
+    console.log(comics)
+
+    return <ItemList comics={comics} />
 }
 export default ItemContainer;

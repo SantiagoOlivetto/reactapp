@@ -15,9 +15,9 @@ const NavBar = () => {
           <li><a href='../src/index.html'>About</a></li>
           <li><a href='../src/index.html'>Contact</a></li>
           </ul>
-        </div>
-        <div className='cartFlex'>
-          <CartWidget />
+          <div className='cartFlex'>
+            <CartWidget />
+          </div>
         </div>
       </div>
     </nav>
