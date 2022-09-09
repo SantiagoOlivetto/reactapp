@@ -1,12 +1,32 @@
-import Greetings from './Greetings'
-import './ItemListContainer.css'
+import { useEffect, useState } from "react";
+import ItemList from "./ItemList";
+import comicsJson from "../comics.json"
 
-const ItemListContainer = () => {
-    return (
-        <div className='greetings'>
-            <Greetings name='Alejandro' lastname='Laparra'/>
-        </div>
-    )
+
+const ItemContainer = () => {
+  const [comics, setComics] = useState([]);
+
+    const getComics = (data) => {
+        return new Promise((resolve, reject) => {
+            if (data) {
+                resolve(data)
+            }
+            else {
+                reject("Error")
+            }
+        })
+    }
+
+  useEffect( () => {
+    setInterval(() => {
+      getComics(comicsJson.data.results)
+        .then((res) => setComics(res))
+        .catch((rej) => console.log(`${rej} Error`))
+    },2000)
+  }, []) 
+
+  /*   console.log(comics) */
+
+    return <ItemList comics={comics} />
 }
-
-export default ItemListContainer
+export default ItemContainer;
