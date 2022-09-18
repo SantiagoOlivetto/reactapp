@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom'
 import './CartWidget.css'
 
 const CartWidget = () => {
   return (
     <div className="cartCont">
-      <a><ion-icon name="cart-outline"></ion-icon></a>
+      <Link className='navLink' to={`/cart`}><ion-icon name="cart-outline"></ion-icon></Link>
     </div>
   )
 }

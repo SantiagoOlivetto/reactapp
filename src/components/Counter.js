@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { useCartContext } from "./context/CartContext";
 
-const Counter = ({ stock, initial }) => {
+const Counter = ({ stock, initial, comic }) => {
   const [counter, setCounter] = useState(Number(initial));  
 
   const plus = () => {
@@ -10,6 +11,8 @@ const Counter = ({ stock, initial }) => {
   const minus = () => {
     setCounter(counter - 1);
   };
+
+  const {addToCart, isInCart} = useCartContext()
 
   return (
     <div>
@@ -21,7 +24,7 @@ const Counter = ({ stock, initial }) => {
         >
           -
         </button>
-        <strong className="m-2">{counter}</strong>
+        <strong className="m-5">{counter}</strong>
         <button
           disabled={counter === Number(stock)}
           onClick={plus}
@@ -30,7 +33,10 @@ const Counter = ({ stock, initial }) => {
           +
         </button>
       </div>
-      <button disabled={counter < Number(initial)} className="btn btn-primary rounded m-4">
+      <button 
+        disabled={counter < Number(initial) }
+        onClick={addToCart(comic)} 
+        className="btn btn-primary rounded m-4">
         Add to cart
       </button>
     </div>
