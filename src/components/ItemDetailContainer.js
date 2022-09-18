@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    getItem(id).then((data) => {
+     getItem(id).then((data) => {
       console.log(data)
       if (data) {
         setItem(data);
