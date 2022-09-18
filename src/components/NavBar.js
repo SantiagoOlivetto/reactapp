@@ -11,10 +11,10 @@ const NavBar = () => {
         </div>
         <div className='nav'>
           <ul>
-          <li><a href='../src/index.html'>Home</a></li>
+          <li><Link to='../src/index.html'>Home</Link></li>
           <li><Link to={`/comics`}>Comics</Link></li>
-          <li><a href='../src/index.html'>About</a></li>
-          <li><a href='../src/index.html'>Contact</a></li>
+          <li><Link to='../src/index.html'>About</Link></li>
+          <li><Link to='../src/index.html'>Contact</Link></li>
           </ul>
           <div className='cartFlex'>
             <CartWidget />

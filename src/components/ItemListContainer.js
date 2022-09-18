@@ -18,14 +18,12 @@ const ItemContainer = () => {
     }
 
   useEffect( () => {
-    setInterval(() => {
+    setTimeout(() => {
       getComics(comicsJson.data.results)
         .then((res) => setComics(res))
         .catch((rej) => console.log(`${rej} Error`))
     },2000)
   }, []) 
-
-  /*   console.log(comics) */
 
     return <ItemList comics={comics} />
 }
